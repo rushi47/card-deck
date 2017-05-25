@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Game</title>
+    <link rel="stylesheet" type="text/css" href="card.css">
+
+</head>
+<body>
+
+<div id="sourceB" class="b" name="spade"  draggable="true" ondragstart="drag(event)" data-target-id="tb">
+        </div>
+        
+        </div>
+        <div id="sourceR" class="b" name="spade"  draggable="true" ondragstart="drag(event)"" data-target-id="tb">
+        </div>
+        
+    </div>
+
+    <div id="tb" class="tb" ondrop="drop(event)" 
+                 ondragover="allowDrop(event)" data-match="sourceB"></div>
+    <div id="tr" class="tr" ondrop="drop(event)" 
+                 ondragover="allowDrop(event)"  data-match="sourceR"></div>
+
+                
+
+    </div>
+
+
+
+<script type="text/javascript" src="card.js"></script> 

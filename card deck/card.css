@@ -1,0 +1,54 @@
+
+
+body{
+	background-color: white;
+}
+
+.b{
+
+	width: 20%;
+	background: white;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.66%;
+}
+
+#container{
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+
+#tb {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#tr {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+#tn {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+#td {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
