@@ -1,3 +1,5 @@
+
+
 - name: Install yum packages
   yum:
     name: "{{ item }}"
@@ -24,3 +26,38 @@ hardening_packages:
   - bind-utils
   - wget
   - curl
+
+- name: Allow only SSH Protocol 2
+  lineinfile:
+    path: '/etc/ssh/sshd_config'
+    line: 'Protocol 2'
+    backup: yes
+  notify:
+    - restart sshd
+
+- name: Disable SSH support for .rhosts file
+  replace:
+    path: '/etc/ssh/sshd_config'
+    regexp: '^#\s?IgnoreRhosts yes'
+    replace: 'IgnoreRhosts yes'
+    backup: yes
+  notify:
+    - restart sshd
+
+- name: Disable host based authentication
+  replace:
+    path: '/etc/ssh/sshd_config'
+    regexp: '^#\s?HostbasedAuthentication no'
+    replace: 'HostbasedAuthentication no'
+    backup: yes
+  notify:
+    - restart sshd
+
+- name: Disable SSH access via empty passwords
+  replace:
+    path: '/etc/ssh/sshd_config'
+    regexp: '^#\s?PermitEmptyPasswords no'
+    replace: 'PermitEmptyPasswords no'
+    backup: yes
+  notify:
+    - restart sshd
