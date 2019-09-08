@@ -1,0 +1,26 @@
+- name: Install yum packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items: "{{ hardening_packages }}"
+
+
+- name: base repo
+  yum_repository:
+    name: "base"
+    description: "base repo added by Ansible"
+    baseurl: "http://{{ repo_server }}/repo/centos/7/base"
+    gpgcheck: no
+    enabled: yes
+    state: present
+hardening_packages:
+  - authconfig
+  - mlocate
+  - dos2unix
+  - screen
+  - ntp
+  - vim
+  - telnet
+  - bind-utils
+  - wget
+  - curl
